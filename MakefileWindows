@@ -11,10 +11,12 @@ octave-dumper: prepare
 	call "%windows10_x64_BUILD_TOOLS_ROOT%\\VC\\Auxiliary\\Build\\vcvarsall.bat" x64 && cd build\\bin &&cl ..\\..\\src\\examples\\octave-dumper.cpp /EHsc /Feoctave-dumper.exe
 
 clean:
+	if [ -d "build" ]; then
+		echo "Dir exists"
+		rmdir /q /s build
+	fi
 	
-	ifneq ("$(wildcard build/.*)","") rmdir /q /s build
     
-
 prepare: clean
 	if not exist "build" mkdir build
 	if not exist "build\\bin" mkdir build\\bin

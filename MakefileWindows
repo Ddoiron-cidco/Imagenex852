@@ -12,9 +12,8 @@ octave-dumper: prepare
 
 clean:
 	
-	ifneq ($(wildcard build/.*),)
-		rmdir /q /s build
-    endif
+	ifneq ($(wildcard build/.*),) rmdir /q /s build
+    
 
 prepare: clean
 	if not exist "build" mkdir build

@@ -12,7 +12,7 @@ octave-dumper: prepare
 
 clean:
 	
-	ifneq ($(wildcard build/.*),) rmdir /q /s build
+	ifneq ("$(wildcard build/.*)","") rmdir /q /s build
     
 
 prepare: clean
